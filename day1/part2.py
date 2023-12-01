@@ -1,5 +1,4 @@
 f = open('input', 'r')
-fi = open('output', 'w+')
 sum = 0
 num_dict = {'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9}
 while True:
@@ -59,10 +58,8 @@ while True:
             elif num_after_second and not num_before_first:
                 line = line[:first_start] + str(num_dict[first_num]) + line[first_start + len(first_num):]
 
-    fi.write(line)
     digits_list = [int(char) for char in line if char.isdigit()]
     if len(digits_list) >= 1:
         sum += digits_list[0]*10 + digits_list[-1]
 print(sum)
 f.close()
-fi.close()
