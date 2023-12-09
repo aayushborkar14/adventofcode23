@@ -13,6 +13,7 @@ while True:
         diff.append(next_diff)
         if all(num == 0 for num in next_diff):
             break
+    diff[-1].insert(0, 0)
     for i in range(len(diff) - 2, -1, -1):
         diff[i].insert(0, diff[i][0] - diff[i + 1][0])
     ans += diff[0][0]
